@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Ecdysiz - YouTube Hashtag Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>YouTube Hashtag Generator by <span class="highlight">Ecdysiz</span></h1>
+            <p>Generate optimized hashtags for superior YouTube visibility and engagement</p>
+        </div>
+      
+        <div class="tool-container">
+            <form id="hashtagForm">
+                <div class="form-group">
+                    <label for="mainTopic">Video Category</label>
+                    <input type="text" id="mainTopic" placeholder="Enter your video category (e.g. gaming, tutorial, vlog)" required>
+                    <span class="error" id="mainTopicError"></span>
+                </div>
+      
+                <div class="form-group">
+                    <label for="specificTags">Specific Keywords (comma separated)</label>
+                    <input type="text" id="specificTags" placeholder="e.g. minecraft, walkthrough, gameplay">
+                </div>
+      
+                <div class="form-group">
+                    <label for="channelSize">Channel Size</label>
+                    <select id="channelSize">
+                        <option value="small">Small (under 1k subscribers)</option>
+                        <option value="medium" selected>Medium (1k-100k subscribers)</option>
+                        <option value="large">Large (over 100k subscribers)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="videoLength">Video Length</label>
+                    <select id="videoLength">
+                        <option value="short">Short (under 5 minutes)</option>
+                        <option value="medium" selected>Medium (5-15 minutes)</option>
+                        <option value="long">Long (over 15 minutes)</option>
+                    </select>
+                </div>
+      
+                <div class="form-group">
+                    <label for="contentDescription">Video Description</label>
+                    <textarea id="contentDescription" placeholder="Describe your video content briefly" required></textarea>
+                    <span class="error" id="contentDescriptionError"></span>
+                </div>
+      
+                <div class="btn-container">
+                    <button type="submit" class="btn" id="generateBtn">GENERATE HASHTAGS</button>
+                </div>
+            </form>
+      
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating optimized hashtags...</p>
+            </div>
+      
+            <div class="result-container" id="resultContainer" style="display: none;">
+                <h3>Generated YouTube Hashtags</h3>
+                <p>Select and copy these optimized hashtags for your video description and tags:</p>
+                <div id="hashtagsList"></div>
+                
+                <div class="csv-actions" id="csvActions">
+                    <button class="csv-btn" id="csvBtn">Convert to CSV File</button>
+                    <a href="#" class="download-btn" id="downloadBtn" style="display: none;">Download CSV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
